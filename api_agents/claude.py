@@ -1,11 +1,11 @@
 import anthropic
 import os
-from env_loader import get_required_environ
-from constants import API_KEY, ANTHROPIC
-from constants import Path
+from env.env_loader import get_required_environ
+from env.constants import API_KEY, ANTHROPIC
+from env.constants import Path
 
 def create_anthropic_client() -> anthropic.Anthropic:
-    api_key = get_required_environ("ANTHROPIC_API_KEY")
+    api_key = get_required_environ(AN)
     return anthropic.Anthropic(api_key=api_key)
 
 client = create_anthropic_client()
